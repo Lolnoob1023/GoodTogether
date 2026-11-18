@@ -1,0 +1,1438 @@
+/* =============================================================
+   GOOD TOGETHER - RESTORED CORE WEBSITE STYLES
+   Rebuilt to match the existing PHP markup and original theme.
+   The Stage 11.3 responsive and Settings rules are kept below.
+   ============================================================= */
+
+:root {
+    --forest: #344b3c;
+    --forest-deep: #243b30;
+    --sage: #587562;
+    --cream: #f6f0e3;
+    --beige: #dfd2b9;
+    --page-bg: #fffdf8;
+    --paper: #ffffff;
+    --line: #d7d0c4;
+    --ink: #25392e;
+    --muted: #627065;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: #eae4d8;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.page {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--page-bg);
+    box-shadow: 0 3px 25px rgba(32, 49, 39, 0.06);
+}
+
+h1, h2, h3, h4 {
+    color: var(--forest);
+    line-height: 1.3;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+h2 { margin-top: 0; }
+
+p { margin: 0 0 14px; }
+
+a { color: var(--forest); }
+
+a:hover { color: #496b53; }
+
+/* SITE HEADER / FOOTER */
+header {
+    background: var(--forest);
+    color: #fff;
+    padding: 29px 38px;
+}
+
+header h1 {
+    font-size: clamp(28px, 3vw, 38px);
+    margin: 0 0 4px;
+    color: white;
+}
+
+header p {
+    margin: 0;
+    color: #ebeee6;
+}
+
+footer {
+    padding: 20px 26px;
+    text-align: center;
+    background: var(--forest-deep);
+    color: white;
+}
+
+footer p { margin: 0; }
+
+/* NAVIGATION: both classic .navbar and shared .gt-nav */
+nav.navbar,
+nav.gt-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    padding: 14px 26px;
+    background: var(--beige);
+    border-bottom: 1px solid #cbbd9e;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--forest);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.35;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.nav-links,
+.nav-account {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.nav-account { margin-left: auto; }
+
+/* HOMEPAGE WELCOME PANEL */
+.welcome {
+    padding: 44px 38px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(120deg, #f8f3e7 0%, #ece6d8 100%);
+}
+
+.welcome h2 {
+    margin: 0 0 13px;
+    font-size: clamp(25px, 3vw, 33px);
+}
+
+.welcome p {
+    max-width: 790px;
+    margin-bottom: 22px;
+    color: #47584d;
+}
+
+.welcome-button,
+.login-btn,
+.signup-btn,
+.dashboard-link,
+.join-link,
+.edit-event-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 17px;
+    border-radius: 3px;
+    border: 1px solid var(--forest);
+    background: var(--forest);
+    color: #fff;
+    font: 700 14px/1.4 Arial, Helvetica, sans-serif;
+}
+
+.welcome-button:hover,
+.login-btn:hover,
+.signup-btn:hover,
+.dashboard-link:hover,
+.join-link:hover,
+.edit-event-link:hover {
+    background: #496b53;
+    color: white;
+    text-decoration: none;
+}
+
+/* HOMEPAGE: SIDEBAR + EVENT LIST */
+.content {
+    display: grid;
+    grid-template-columns: 275px minmax(0, 1fr);
+    align-items: start;
+    gap: 22px;
+    padding: 30px 28px 36px;
+}
+
+.sidebar {
+    width: auto;
+    min-width: 0;
+    background: #f7f2e8;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 23px;
+}
+
+.sidebar h3,
+.main-content h2 {
+    margin-top: 0;
+}
+
+.sidebar label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--forest);
+    margin: 15px 0 6px;
+}
+
+.sidebar input,
+.sidebar select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 43px;
+    padding: 9px 10px;
+    border: 1px solid #bdb7ab;
+    border-radius: 3px;
+    background: white;
+    font-size: 14px;
+}
+
+.sidebar button {
+    margin-top: 19px;
+    width: 100%;
+}
+
+.sidebar-info {
+    padding-top: 15px;
+}
+
+.main-content {
+    width: 100%;
+    min-width: 0;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 26px 29px 30px;
+}
+
+.main-content h2 {
+    margin-bottom: 12px;
+}
+
+#eventCount {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 3px;
+    margin-bottom: 14px;
+}
+
+.event {
+    background: #fcfaf5;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--sage);
+    border-radius: 3px;
+    padding: 21px 23px;
+    margin: 0 0 18px;
+}
+
+.event h3 {
+    margin: 0 0 13px;
+    font-size: 22px;
+}
+
+.event p { margin: 7px 0; }
+
+.event details {
+    padding: 7px 0;
+    margin: 9px 0 5px;
+    border-top: 1px solid #ddd7ca;
+}
+
+.event summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--forest);
+    padding: 8px 0;
+}
+
+.event details p { margin: 9px 0; }
+
+.registration-area { margin-top: 17px; }
+
+.registration-area form { margin: 0; }
+
+.joined-text,
+.registration-notice,
+.success-message {
+    display: block;
+    background: #e5f0e5;
+    border: 1px solid #bbd0bc;
+    color: #27533a;
+    border-radius: 3px;
+    padding: 11px 13px;
+    margin: 13px 0;
+}
+
+.full-text,
+.error-message,
+.form-message.error {
+    display: block;
+    background: #f7e9e3;
+    border: 1px solid #e7beb0;
+    color: #873f2d;
+    border-radius: 3px;
+    padding: 11px 13px;
+    margin: 13px 0;
+}
+
+#noResults { padding: 13px 0; color: var(--muted); }
+
+.about {
+    padding: 32px 38px 38px;
+    border-top: 1px solid var(--line);
+    background: var(--cream);
+}
+
+.about h2 { margin-bottom: 10px; }
+.about p { max-width: 850px; }
+
+/* BUTTONS, FIELDS, FORMS */
+button,
+input[type='submit'],
+input[type='button'] {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid var(--forest);
+    border-radius: 3px;
+    background: var(--forest);
+    color: white;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+button:hover,
+input[type='submit']:hover,
+input[type='button']:hover {
+    background: #496b53;
+}
+
+button:disabled,
+input[type='submit']:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+input,
+select,
+textarea { font-family: Arial, Helvetica, sans-serif; }
+
+input:not([type='hidden']):not([type='checkbox']):not([type='radio']),
+select,
+textarea {
+    padding: 10px 12px;
+    border: 1px solid #b5b3a9;
+    border-radius: 3px;
+    background: #fff;
+    color: #283c31;
+}
+
+textarea { min-height: 105px; }
+
+/* LOGIN, SIGN-UP, AND GENERAL FORM PAGES */
+.auth-container,
+.signup-container,
+.login-container,
+.form-container,
+.create-event-container,
+.edit-event-container {
+    padding: 42px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.auth-box,
+.signup-box,
+.login-box,
+.form-box,
+.create-event-box,
+.edit-event-box {
+    width: 100%;
+    max-width: 580px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 30px 35px;
+}
+
+.auth-box form,
+.signup-box form,
+.login-box form,
+.form-box form,
+.create-event-box form,
+.edit-event-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-box label,
+.signup-box label,
+.login-box label,
+.form-box label,
+.create-event-box label,
+.edit-event-box label,
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: var(--forest);
+    margin-top: 7px;
+}
+
+.auth-box input:not([type='hidden']),
+.signup-box input:not([type='hidden']),
+.login-box input:not([type='hidden']),
+.form-box input:not([type='hidden']),
+.create-event-box input:not([type='hidden']),
+.edit-event-box input:not([type='hidden']),
+.auth-box select, .signup-box select, .form-box select,
+.create-event-box select, .edit-event-box select,
+.auth-box textarea, .form-box textarea,
+.create-event-box textarea, .edit-event-box textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+.auth-link,
+.form-note { margin-top: 16px; }
+
+/* DASHBOARD PAGES: ALL THREE ROLES */
+.dashboard-container {
+    padding: 40px 22px;
+    background: #f7f3eb;
+}
+
+.dashboard-box {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 34px 38px;
+}
+
+.dashboard-box > h2 { font-size: 28px; }
+.dashboard-box > h3 { margin-top: 23px; }
+.dashboard-note { color: var(--muted); font-size: 14px; }
+
+.organizer-stats,
+.volunteer-stats,
+.admin-stats,
+.attendance-stats,
+.report-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 25px 0;
+}
+
+.organizer-stats .stat-box,
+.volunteer-stats .volunteer-stat,
+.admin-stats .admin-stat,
+.attendance-stats > div,
+.report-stats > div {
+    background: #f6f0e3;
+    border: 1px solid var(--line);
+    padding: 20px 16px;
+    text-align: center;
+}
+
+.stat-box h3,
+.volunteer-stat h3,
+.admin-stat h3 {
+    margin: 0 0 5px;
+    font-size: 31px;
+}
+
+.stat-box p,
+.volunteer-stat p,
+.admin-stat p { margin: 0; color: #5a695f; }
+
+.organizer-event,
+.volunteer-event,
+.registration-card {
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: #fffdf8;
+    padding: 20px 23px;
+    margin: 16px 0;
+}
+
+.organizer-event h3,
+.volunteer-event h4,
+.registration-card h3 { margin: 0 0 13px; }
+
+.dashboard-actions,
+.event-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.dashboard-actions form,
+.event-actions form { margin: 0; }
+
+.delete-event-button,
+button.delete-event-button,
+.cancel-button {
+    background: #a35a42;
+    border-color: #a35a42;
+}
+
+.delete-event-button:hover,
+button.delete-event-button:hover,
+.cancel-button:hover { background: #87452f; }
+
+.logout-button { margin-top: 25px; }
+.delete-help { margin: 0; font-size: 13px; color: #8f513c; }
+
+/* REGISTRATION AND REPORT PAGES */
+.registrations-page,
+.volunteers-container,
+.report-page,
+.moderation-page,
+.user-admin-page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 25px;
+}
+
+.attendance-form {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-wrap: wrap;
+}
+
+.admin-table-wrapper,
+.volunteers-table-wrapper,
+.moderation-table-wrapper,
+.user-admin-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-table,
+.volunteers-table,
+.moderation-table,
+.user-admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    background: white;
+}
+
+.admin-table th,
+.volunteers-table th,
+.moderation-table th,
+.user-admin-table th {
+    background: var(--forest);
+    color: white;
+    padding: 12px;
+    border: 1px solid var(--line);
+    text-align: left;
+}
+
+.admin-table td,
+.volunteers-table td,
+.moderation-table td,
+.user-admin-table td {
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+}
+
+.admin-table tbody tr:nth-child(even),
+.volunteers-table tbody tr:nth-child(even),
+.moderation-table tbody tr:nth-child(even),
+.user-admin-table tbody tr:nth-child(even) {
+    background: #f6f0e3;
+}
+
+@media (max-width: 800px) {
+    .content {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+    .sidebar, .main-content { width: 100%; }
+    .welcome { padding: 30px 23px; }
+    .about { padding: 25px 23px; }
+}
+
+@media (max-width: 520px) {
+    header { padding: 24px 18px; }
+    .welcome { padding: 26px 18px; }
+    .content { padding: 13px; gap: 14px; }
+    .sidebar, .main-content { padding: 18px; }
+    .about { padding: 23px 18px; }
+    .auth-container, .signup-container, .login-container,
+    .form-container, .create-event-container, .edit-event-container {
+        padding: 18px 12px;
+    }
+    .auth-box, .signup-box, .login-box,
+    .form-box, .create-event-box, .edit-event-box,
+    .dashboard-box { padding: 18px; }
+    .dashboard-container { padding: 14px 12px; }
+}
+
+
+
+/* ===========================================
+   GOOD TOGETHER - STAGE 11.3
+   FINAL UI AND USABILITY IMPROVEMENTS
+   =========================================== */
+
+/* -------------------------------------------
+   1. WEBSITE COLORS AND GENERAL LAYOUT
+   ------------------------------------------- */
+
+:root {
+    --gt-green: #344b3c;
+    --gt-green-hover: #496b53;
+    --gt-cream: #f6f0e3;
+    --gt-background: #eae4d8;
+    --gt-brown: #a76542;
+    --gt-border: #d0c9bc;
+}
+
+/* Make sizing more predictable */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--gt-background);
+    color: #26382d;
+    line-height: 1.6;
+}
+
+/* Keep the website centered */
+.page {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Prevent long text from breaking layouts */
+.event,
+.organizer-event,
+.registration-card,
+.volunteer-event {
+    overflow-wrap: anywhere;
+}
+
+/* -------------------------------------------
+   2. NAVIGATION BAR
+   ------------------------------------------- */
+
+/* Shared navigation styling */
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding: 12px 22px;
+    background-color: #dcd0b6;
+}
+
+/* Navigation links */
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Visual feedback when hovering */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Homepage navigation groups */
+.nav-links,
+.nav-account {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav-account {
+    margin-left: auto;
+}
+
+/* -------------------------------------------
+   3. BUTTON IMPROVEMENTS
+   ------------------------------------------- */
+
+/* Consistent pointer cursor */
+button,
+input[type="submit"] {
+    cursor: pointer;
+}
+
+/* Comfortable click target */
+button,
+.dashboard-link,
+.edit-event-link,
+.join-link,
+.login-btn,
+.signup-btn {
+    min-height: 42px;
+}
+
+/* Smooth hover feedback */
+button,
+.dashboard-link,
+.edit-event-link,
+.join-link {
+    transition: background-color 0.15s ease;
+}
+
+/* Dashboard links */
+.dashboard-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Avoid top spacing inside event action rows */
+.event-actions .dashboard-link,
+.event-actions .edit-event-link {
+    margin-top: 0;
+}
+
+/* -------------------------------------------
+   4. FORM INPUTS
+   ------------------------------------------- */
+
+/* Apply readable font to form controls */
+input,
+select,
+textarea,
+button {
+    font: inherit;
+}
+
+/* Improve ordinary form inputs */
+input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+    max-width: 100%;
+    min-height: 42px;
+}
+
+/* Clear field borders */
+.auth-box input:not([type="hidden"]),
+.auth-box select,
+.auth-box textarea {
+    border: 1px solid #a7a49d;
+    background-color: white;
+}
+
+/* Consistent labels */
+.auth-box label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+/* Textareas should remain easy to resize */
+textarea {
+    resize: vertical;
+}
+
+/* -------------------------------------------
+   5. KEYBOARD ACCESSIBILITY
+   ------------------------------------------- */
+
+/* Visible outline when navigating with Tab */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+    outline: 3px solid #bd854c;
+    outline-offset: 3px;
+}
+
+/* -------------------------------------------
+   6. DASHBOARD AND EVENT CARDS
+   ------------------------------------------- */
+
+.dashboard-box,
+.auth-box,
+.registration-card,
+.organizer-event,
+.volunteer-event,
+.event {
+    max-width: 100%;
+}
+
+/* Subtle card styling */
+.registration-card,
+.organizer-event,
+.volunteer-event {
+    border-radius: 3px;
+}
+
+/* Consistent spacing on event cards */
+.organizer-event,
+.volunteer-event {
+    margin-bottom: 18px;
+}
+
+/* Keep action buttons together where possible */
+.event-actions,
+.dashboard-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+/* -------------------------------------------
+   7. TABLE IMPROVEMENTS
+   ------------------------------------------- */
+
+/* Wide tables can scroll horizontally */
+.admin-table-wrapper,
+.volunteers-table-wrapper,
+.moderation-table-wrapper,
+.user-admin-table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Keep table content readable */
+.admin-table,
+.volunteers-table,
+.moderation-table,
+.user-admin-table {
+    border-collapse: collapse;
+}
+
+/* Don't make long email addresses overflow */
+.admin-table td,
+.volunteers-table td,
+.moderation-table td,
+.user-admin-table td {
+    overflow-wrap: anywhere;
+}
+
+/* -------------------------------------------
+   8. TABLET RESPONSIVENESS
+   ------------------------------------------- */
+
+@media (max-width: 800px) {
+
+    /* Stack sidebar and event listings */
+    .content {
+        display: block;
+    }
+
+    .sidebar,
+    .main-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .sidebar {
+        margin-bottom: 22px;
+    }
+
+    /* Keep dashboard statistic boxes readable */
+    .organizer-stats,
+    .admin-stats,
+    .report-stats,
+    .attendance-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    /* Reduce page padding */
+    .dashboard-container,
+    .registrations-page,
+    .volunteers-container,
+    .report-page,
+    .moderation-page,
+    .user-admin-page {
+        padding: 20px;
+    }
+
+}
+
+/* -------------------------------------------
+   9. MOBILE RESPONSIVENESS
+   ------------------------------------------- */
+
+@media (max-width: 520px) {
+
+    /* Smaller header spacing */
+    header {
+        padding: 20px 16px;
+    }
+
+    /* Wrap navigation links neatly */
+    nav {
+        padding: 12px 14px;
+        gap: 8px 14px;
+    }
+
+    .nav-links,
+    .nav-account {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .nav-account {
+        margin-left: 0;
+    }
+
+    /* Less space around content */
+    .dashboard-container,
+    .registrations-page,
+    .volunteers-container,
+    .report-page,
+    .moderation-page,
+    .user-admin-page {
+        padding: 12px;
+    }
+
+    .dashboard-box,
+    .registration-card,
+    .organizer-event,
+    .volunteer-event {
+        padding: 16px;
+    }
+
+    /* Two-column statistics on phones */
+    .organizer-stats,
+    .admin-stats,
+    .report-stats,
+    .attendance-stats,
+    .volunteer-stats,
+    .user-admin-stats,
+    .moderation-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    /* Keep statistic numbers readable */
+    .admin-stat h3,
+    .stat-box h3,
+    .volunteer-stat h3,
+    .attendance-stat-box h3 {
+        font-size: 24px;
+    }
+
+    /* Stack event action buttons */
+    .event-actions,
+    .dashboard-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .event-actions form,
+    .event-actions button,
+    .event-actions a,
+    .dashboard-actions a {
+        width: 100%;
+    }
+
+    /* Attendance controls fit narrow screens */
+    .attendance-form select,
+    .attendance-form button {
+        width: 100%;
+    }
+
+}
+
+/* -------------------------------------------
+   10. REDUCED MOTION SUPPORT
+   ------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    button,
+    .dashboard-link,
+    .edit-event-link,
+    .join-link {
+        transition: none;
+    }
+
+}
+
+
+
+/* =====================================
+   GOOD TOGETHER - NAVIGATION & SETTINGS
+   ===================================== */
+
+.gt-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    padding: 13px 22px;
+    background-color: #dcd0b6;
+}
+
+.gt-nav a {
+    color: #344b3c;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 7px 2px;
+}
+
+.gt-nav a:hover {
+    text-decoration: underline;
+}
+
+.gt-nav a:focus-visible {
+    outline: 3px solid #bd854c;
+    outline-offset: 3px;
+}
+
+/* Settings page */
+
+.settings-box {
+    max-width: 760px;
+}
+
+.settings-section {
+    background-color: #fffdf7;
+    border: 1px solid #d0c9bc;
+    padding: 22px;
+    margin: 24px 0;
+}
+
+.settings-section h3 {
+    color: #344b3c;
+}
+
+.settings-section label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.settings-section input:not([type="hidden"]) {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 11px;
+    min-height: 43px;
+    border: 1px solid #a7a49d;
+    background-color: white;
+}
+
+.settings-button {
+    background-color: #344b3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.settings-button:hover {
+    background-color: #496b53;
+}
+
+.settings-success {
+    background-color: #e3eee3;
+    color: #27613e;
+    padding: 13px;
+    margin: 15px 0;
+}
+
+.settings-error {
+    background-color: #f4e2da;
+    color: #974c31;
+    padding: 13px;
+    margin: 15px 0;
+}
+
+@media (max-width: 520px) {
+
+    .gt-nav {
+        padding: 10px 14px;
+        gap: 5px 14px;
+    }
+
+    .settings-section {
+        padding: 15px;
+    }
+}
+
+
+/* ==========================================
+   GOOD TOGETHER - OPPORTUNITIES PAGE INTRO
+   ========================================== */
+
+.opportunities-intro {
+    padding: 40px 38px 35px;
+    background: linear-gradient(
+        120deg,
+        #f8f3e7,
+        #ece6d8
+    );
+    border-bottom: 1px solid #d7d0c4;
+}
+
+/* Small text above the heading */
+.opportunities-intro .home-eyebrow {
+    color: #587562;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+}
+
+/* Main introduction heading */
+.opportunities-intro h2 {
+    font-family: Georgia, serif;
+    color: #344b3c;
+    font-size: 34px;
+    line-height: 1.3;
+    margin: 0 0 15px;
+}
+
+/* Introduction description */
+.opportunities-intro > p:last-child {
+    font-family: Arial, sans-serif;
+    color: #4e6254;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 850px;
+    margin: 0;
+}
+
+/* Tablet responsiveness */
+@media (max-width: 800px) {
+
+    .opportunities-intro {
+        padding: 32px 25px;
+    }
+
+}
+
+/* Mobile responsiveness */
+@media (max-width: 520px) {
+
+    .opportunities-intro {
+        padding: 28px 18px;
+    }
+
+    .opportunities-intro h2 {
+        font-size: 27px;
+    }
+
+}
+
+/* GOOD TOGETHER: EVENTS LIST AND EVENT INTRODUCTION */
+.event-view-link,
+.gt-event-primary,
+.gt-event-group-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #344b3c;
+    color: #ffffff;
+    text-decoration: none;
+    border: 0;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font: inherit;
+}
+.event-view-link:hover,
+.gt-event-primary:hover,
+.gt-event-group-link:hover {
+    background-color: #496b53;
+    color: #ffffff;
+}
+.gt-event-details-page {
+    padding: 35px 38px 55px;
+    background: #fffdf8;
+}
+.gt-event-back {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #344b3c;
+    font-weight: bold;
+    text-decoration: none;
+}
+.gt-event-back:hover { text-decoration: underline; }
+.gt-event-details-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, .85fr) minmax(0, 1.15fr);
+    gap: 32px;
+    align-items: start;
+}
+.gt-event-poster {
+    min-height: 510px;
+    border: 2px dashed #b6bdad;
+    border-radius: 6px;
+    background: #f2f0e8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 7px;
+    padding: 20px;
+    color: #647568;
+}
+.gt-event-poster span {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #526e59;
+}
+.gt-event-poster p { margin: 0; font-size: 14px; }
+.gt-event-details-content {
+    border: 1px solid #ded8ca;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 28px 30px;
+    overflow-wrap: anywhere;
+}
+.gt-event-kicker {
+    color: #64806b;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    margin: 0 0 8px;
+}
+.gt-event-details-content h2 {
+    color: #344b3c;
+    font-family: Georgia, serif;
+    font-size: clamp(27px, 3vw, 38px);
+    line-height: 1.2;
+    margin: 0 0 10px;
+}
+.gt-event-lead { color: #607166; margin: 0 0 24px; }
+.gt-event-facts {
+    border: 1px solid #e1dace;
+    background: #f6f0e3;
+    padding: 15px 20px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+.gt-event-facts p { margin: 6px 0; }
+.gt-event-details-content h3 {
+    font-family: Georgia, serif;
+    color: #344b3c;
+    font-size: 22px;
+    margin: 22px 0 10px;
+}
+.gt-event-description { white-space: normal; line-height: 1.7; }
+.gt-event-group-link { margin: 6px 0 13px; }
+.gt-event-join-area { border-top: 1px solid #e0d8ca; padding-top: 21px; margin-top: 26px; }
+.gt-event-join-area form { margin: 0; }
+.gt-event-success { color: #27613e; font-weight: bold; }
+.gt-event-error { color: #973e31; font-weight: bold; }
+.gt-event-info { color: #52665b; }
+.gt-event-organizer-form {
+    border: 1px solid #ded8ca;
+    background: #f8f4ea;
+    border-radius: 5px;
+    padding: 18px;
+    margin-top: 20px;
+}
+.gt-event-organizer-form label { display: block; font-weight: bold; margin: 10px 0 6px; }
+.gt-event-organizer-form input[type="url"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 11px;
+    margin-bottom: 13px;
+    background: #ffffff;
+    border: 1px solid #b9b9b2;
+    border-radius: 4px;
+}
+@media (max-width: 800px) {
+    .gt-event-details-grid { grid-template-columns: 1fr; }
+    .gt-event-poster { min-height: 280px; }
+}
+@media (max-width: 520px) {
+    .gt-event-details-page { padding: 20px 14px 38px; }
+    .gt-event-details-content { padding: 20px; }
+    .gt-event-poster { min-height: 230px; }
+}
+
+
+
+/* =========================================
+   GOOD TOGETHER - LEFT/RIGHT NAVIGATION
+   ========================================= */
+
+/* Main navigation */
+.gt-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    padding: 12px 28px;
+
+    background-color: #dcd0b6;
+}
+
+/* Left navigation links */
+.gt-nav-left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+
+    min-width: 0;
+}
+
+/* Right navigation links */
+.gt-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-left: auto;
+}
+
+/* All navigation links */
+.gt-nav-left a,
+.gt-nav-right a {
+    color: #344b3c;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Link hover */
+.gt-nav-left a:hover,
+.gt-login-link:hover {
+    text-decoration: underline;
+}
+
+/* Sign Up button */
+.gt-nav-right .gt-signup-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 18px;
+
+    background-color: #344b3c;
+    color: white;
+
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* Sign Up hover */
+.gt-nav-right .gt-signup-link:hover {
+    background-color: #496b53;
+    color: white;
+}
+
+/* Logout form */
+.gt-logout-form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Logout button */
+.gt-logout-button {
+    background-color: #344b3c;
+    color: white;
+
+    border: none;
+    border-radius: 4px;
+
+    padding: 10px 18px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Logout hover */
+.gt-logout-button:hover {
+    background-color: #496b53;
+}
+
+/* Keyboard focus */
+.gt-nav a:focus-visible,
+.gt-nav button:focus-visible {
+    outline: 3px solid #bd854c;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .gt-nav {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+
+    .gt-nav-left {
+        gap: 10px 16px;
+    }
+
+    .gt-nav-right {
+        margin-left: auto;
+    }
+
+}
